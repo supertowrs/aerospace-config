@@ -1,5 +1,5 @@
-# Place a copy of this config to ~/.aerospace.toml
-# After that, you can edit ~/.aerospace.toml to your liking
+# Place a copy of this config at ~/.config/aerospace/aerospace.toml.
+# AeroSpace starts SketchyBar and sends it workspace change events.
 
 # Config version for compatibility and deprecations
 # Fallback value (if you omit the key): config-version = 1
@@ -7,10 +7,15 @@ config-version = 2
 
 # You can use it to add commands that run after AeroSpace startup.
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
-after-startup-command = []
+after-startup-command = ['exec-and-forget sketchybar']
 
 # Start AeroSpace at login
-start-at-login = false
+start-at-login = true
+
+# Notify SketchyBar whenever the focused AeroSpace workspace changes.
+exec-on-workspace-change = ['/bin/bash', '-c',
+    'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE="$AEROSPACE_FOCUSED_WORKSPACE" && "$HOME/.config/sketchybar/plugins/update_workspace_icons.sh"'
+]
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
@@ -53,67 +58,15 @@ persistent-workspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
     3 = ['LG HDR 4K', 'main']
     4 = ['LG HDR 4K', 'main']
     5 = ['LG HDR 4K', 'main']
-    6 = ['C32JG5x', 'LG HDR 4K', 'main']
-    7 = ['C32JG5x', 'LG HDR 4K', 'main']
-    8 = ['built-in', 'main']
-    9 = ['built-in', 'main']
+    6 = ['C32JG5x', 'built-in']
+    7 = ['C32JG5x', 'built-in']
+    8 = ['C32JG5x', 'built-in']
+    9 = ['C32JG5x', 'built-in']
 
 # A callback that runs every time binding mode changes
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 on-mode-changed = []
-
-[[on-window-detected]]
-    if.app-id = 'net.imput.helium'
-    run = 'move-node-to-workspace 1'
-
-[[on-window-detected]]
-    if.app-id = 'com.microsoft.VSCode'
-    run = 'move-node-to-workspace 2'
-
-[[on-window-detected]]
-    if.app-id = 'com.openai.codex'
-    run = 'move-node-to-workspace 3'
-
-[[on-window-detected]]
-    if.app-id = 'com.axosoft.gitkraken'
-    run = 'move-node-to-workspace 3'
-
-[[on-window-detected]]
-    if.app-id = 'com.mitchellh.ghostty'
-    run = 'move-node-to-workspace 4'
-
-[[on-window-detected]]
-    if.app-id = 'org.jkiss.dbeaver.core.product'
-    run = 'move-node-to-workspace 5'
-
-[[on-window-detected]]
-    if.app-id = 'com.electron.kontena-lens'
-    run = 'move-node-to-workspace 5'
-
-[[on-window-detected]]
-    if.app-id = 'com.apple.finder'
-    run = 'move-node-to-workspace 6'
-
-[[on-window-detected]]
-    if.app-id = 'com.tinyspeck.slackmacgap'
-    run = 'move-node-to-workspace 6'
-
-[[on-window-detected]]
-    if.app-id = 'com.readdle.SparkDesktop'
-    run = 'move-node-to-workspace 8'
-
-[[on-window-detected]]
-    if.app-id = 'com.tdesktop.Telegram'
-    run = 'move-node-to-workspace 8'
-
-[[on-window-detected]]
-    if.app-id = 'net.whatsapp.WhatsApp'
-    run = 'move-node-to-workspace 8'
-
-[[on-window-detected]]
-    if.app-id = 'com.github.th-ch.youtube-music'
-    run = 'move-node-to-workspace 9'
 
 # Possible values: (qwerty|dvorak|colemak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
@@ -133,7 +86,7 @@ on-mode-changed = []
     inner.vertical =   0
     outer.left =       0
     outer.bottom =     0
-    outer.top =        0
+    outer.top =        [{ monitor."Built-in Retina Display" = 0 }, 34]
     outer.right =      0
 
 # 'main' binding mode declaration
