@@ -2,6 +2,10 @@
 
 Personal macOS configuration for [AeroSpace](https://github.com/nikitabobko/AeroSpace) and [SketchyBar](https://github.com/FelixKratz/SketchyBar).
 
+This branch is the verified snapshot taken immediately before installing
+`omacosy` on 2026-08-25. It captures AeroSpace 0.21.2-Beta,
+SketchyBar 2.24.0 and borders 1.9.0.
+
 ## Included
 
 - `aerospace.toml`: workspaces 1–9, keyboard bindings, monitor assignments and SketchyBar startup/events.
@@ -19,17 +23,17 @@ chmod +x ~/.config/sketchybar/sketchybarrc ~/.config/sketchybar/plugins/*.sh
 
 The bar uses `Hack Nerd Font` for status icons and `sketchybar-app-font` for application icons.
 
-## Calendar shortcut
+## MeetingBar shortcuts
 
-`calendar_info.sh` requires an Apple Shortcut named `SketchyBar Next Meeting`. It must:
+`meetingbar.sh` uses MeetingBar's App Intents through these Apple Shortcuts:
 
-1. Find Calendar events whose start date is within the next 7 days and which are not all-day events.
-2. Sort by start date and limit the result to one event.
-3. Get the event title and start date.
-4. Produce a Text value in the form `<Title>|<Start Date>`.
-5. Stop and output that Text value.
+- `SketchyBar MeetingBar Title`
+- `SketchyBar MeetingBar Start`
+- `SketchyBar MeetingBar Join`
 
-SketchyBar renders the result as `Meeting title - 1h 14m`, refreshes it every 30 seconds and hides it when the event is more than 24 hours away.
+SketchyBar refreshes the event every 30 seconds, hides the item when no event
+is available, highlights meetings starting within five minutes and joins the
+nearest meeting when clicked.
 
 ## Machine-specific values
 

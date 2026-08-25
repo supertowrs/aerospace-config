@@ -90,17 +90,14 @@ sketchybar --add item clock right \
            --subscribe volume volume_change \
            --add item battery right \
            --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
-           --subscribe battery system_woke power_source_change
-
-##### Meetings / Calendar #####
-sketchybar --add item meetings right \
-           --set meetings icon="󰸘" \
-                          label="Loading..." \
-                          icon.padding_right=3 \
-                          label.padding_right=12 \
-                          update_freq=30 \
-                          script="$PLUGIN_DIR/calendar_info.sh" \
-                          click_script="open -a Calendar"
+           --subscribe battery system_woke power_source_change \
+           --add item meetingbar right \
+           --set meetingbar drawing=off \
+                            updates=on \
+                            update_freq=30 \
+                            icon=󰃭 \
+                            script="$PLUGIN_DIR/meetingbar.sh" \
+                            click_script="/usr/bin/shortcuts run 'SketchyBar MeetingBar Join' >/dev/null 2>&1"
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
