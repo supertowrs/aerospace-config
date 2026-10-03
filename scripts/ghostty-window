@@ -1,0 +1,10 @@
+#!/bin/bash
+# Reuse Ghostty 1.3's running instance; cold start opens one window.
+if /usr/bin/osascript \
+  -e 'if application "Ghostty" is running then' \
+  -e 'with timeout of 5 seconds' \
+  -e "tell application \"Ghostty\" to new window with configuration {initial working directory:\"$HOME\"}" \
+  -e 'end timeout' -e 'else' -e 'error "Ghostty is not running"' -e 'end if' >/dev/null 2>&1; then
+  exit 0
+fi
+exec /usr/bin/open -na Ghostty

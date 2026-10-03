@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+set -uo pipefail
+
+
+A="$(command -v aerospace || echo /opt/homebrew/bin/aerospace)"
+
+FLOATS="$("$A" list-windows --workspace focused --format '%{window-id}|%{window-layout}' 2>/dev/null |
+  awk -F'|' '$2 == "floating" { print $1 }')"
+[ -n "$FLOATS" ] || exit 0
+
+CURRENT="$("$A" list-windows --focused --format '%{window-id}' 2>/dev/null || true)"
+
+first=""
+armed=0
+next=""
+for id in $FLOATS; do
+  [ -n "$first" ] || first="$id"
+  if [ "$armed" = 1 ]; then
+    next="$id"
+    break
+  fi
+  [ "$id" = "$CURRENT" ] && armed=1
+done
+[ -n "$next" ] || next="$first"
+
+"$A" focus --window-id "$next" || exit 0
+"$A" move-mouse window-lazy-center >/dev/null 2>&1 || true

@@ -1,0 +1,25 @@
+AeroSpace — Caps mantenido = Super; Caps solo = Escape
+
+Super+Enter: nueva ventana Ghostty
+Super+Shift+Enter: Safari
+Super+Espacio: Raycast
+Super+W: cerrar ventana
+Super+Flechas: enfocar; Super+Shift+Flechas: mover
+Super+T: flotante/tiling; Super+J: orientación
+Super+F: pantalla completa; Super+N: pantalla completa macOS
+Super+S: enfocar flotantes; Alt+Tab / Alt+Shift+Tab: recorrer ventanas
+Super+- / Super+=: tamaño; Super+R: modo resize (H/J/K/L; Escape para salir)
+Super+1…9: workspace del monitor; Super+Shift+1…9: mover y seguir
+Super+Tab / Super+Shift+Tab: siguiente/anterior workspace del monitor
+Super+B: workspace anterior; Ctrl+Alt+Tab: enfocar otro monitor
+Super+Shift+O: mover ventana al otro monitor, mismo número
+Super+Shift+Espacio: mover todas las ventanas al otro monitor
+Super+Shift+F: Finder; Super+Shift+M: Spotify; Super+Shift+G: Slack
+Super+Shift+Y: Yazi (si está instalado); Super+Shift+L: bloquear
+Super+K: esta ayuda; Super+Shift+;: modo service
+Service: R = reset layout; Escape = recargar; Backspace = cerrar otras ventanas
+
+Cmd+Escape: terminal rápido Ghostty; Shift+Enter: salto de línea
+
+Configuración: ~/.config/aerospace/aerospace.toml
+Los temas, barra, bordes, gestos y Overview de Omacosy se han retirado.

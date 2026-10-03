@@ -1,0 +1,6 @@
+#!/bin/sh
+exec /usr/bin/osascript -e 'tell application "Finder"
+  set w to make new Finder window
+  set target of w to path to home folder
+  activate
+end tell' >/dev/null

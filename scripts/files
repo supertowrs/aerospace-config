@@ -1,0 +1,8 @@
+#!/bin/bash
+YAZI="$(command -v yazi || true)"
+[ -n "$YAZI" ] || YAZI=/opt/homebrew/bin/yazi
+if [ ! -x "$YAZI" ]; then
+  /usr/bin/osascript -e 'display notification "Yazi no está instalado" with title "AeroSpace"'
+  exit 0
+fi
+exec /usr/bin/open -na Ghostty --args -e "$YAZI"

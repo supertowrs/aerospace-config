@@ -1,0 +1,10 @@
+# Ghostty: ajustes para AeroSpace.
+macos-titlebar-style = hidden
+window-width = 100
+window-height = 30
+resize-overlay = never
+quit-after-last-window-closed = true
+
+# Terminal rápido global y salto de línea con Shift+Enter.
+keybind = global:cmd+escape=toggle_quick_terminal
+keybind = shift+enter=text:\n
