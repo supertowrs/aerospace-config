@@ -16,8 +16,11 @@ Super+Shift+O: mover ventana al otro monitor, mismo número
 Super+Shift+Espacio: mover todas las ventanas al otro monitor
 Super+Shift+F: Finder; Super+Shift+M: Spotify; Super+Shift+G: Slack
 Super+Shift+Y: Yazi (si está instalado); Super+Shift+L: bloquear
-Super+K: esta ayuda; Super+Shift+;: modo service
-Service: R = reset layout; Escape = recargar; Backspace = cerrar otras ventanas
+Super+K: esta ayuda; Super+G: modo service (soltar Caps antes de pulsar una flecha)
+Service: Flechas = agrupar con la ventana en esa dirección y salir
+Service: Enter = salir; R = reset layout; Escape = recargar; Backspace = cerrar otras ventanas
+Ejemplo: tres ventanas en fila, enfoca la derecha y pulsa Super+G, suelta Caps y pulsa ←.
+Las dos de la derecha quedan agrupadas una encima de la otra.
 
 Cmd+Escape: terminal rápido Ghostty; Shift+Enter: salto de línea
 

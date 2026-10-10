@@ -81,7 +81,7 @@ cmd-ctrl-alt-shift-g = "exec-and-forget open -a \"Slack\""
 cmd-ctrl-alt-shift-y = "exec-and-forget $HOME/.config/aerospace/scripts/files"
 cmd-ctrl-alt-shift-l = "exec-and-forget $HOME/.config/aerospace/scripts/lock-screen"
 cmd-ctrl-alt-r = "mode resize"
-cmd-ctrl-alt-shift-semicolon = "mode service"
+cmd-ctrl-alt-g = "mode service"
 
 [mode.resize.binding]
 h = "resize width -50"
@@ -94,6 +94,11 @@ enter = "mode main"
 esc = "mode main"
 
 [mode.service.binding]
+left = ["join-with left", "mode main"]
+down = ["join-with down", "mode main"]
+up = ["join-with up", "mode main"]
+right = ["join-with right", "mode main"]
+enter = "mode main"
 esc = ["reload-config", "mode main"]
 r = ["flatten-workspace-tree", "mode main"]
 backspace = ["close-all-windows-but-current", "mode main"]

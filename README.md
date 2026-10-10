@@ -66,5 +66,8 @@ En Karabiner, selecciona el perfil `AeroSpace` y activa **Modify events** para c
 | Super + Shift + F | Nueva ventana de Finder |
 | Super + Shift + L | Bloquear pantalla |
 | Super + K | Mostrar la hoja de atajos |
+| Super + G, soltar Caps y pulsar una flecha | Agrupar con la ventana en esa dirección y salir del modo servicio |
+
+Para dejar una ventana a la izquierda y dos apiladas a la derecha, empieza con tres ventanas en fila: enfoca la del extremo derecho, pulsa `Caps + G`, suelta Caps y pulsa `←`. El modo servicio también permite salir con Enter o Escape y restablecer la distribución con R.
 
 Los atajos para cambiar temas y fondos se retiraron junto con Omacosy. El panel de ayuda usa Quick Look y se cierra con Escape.
